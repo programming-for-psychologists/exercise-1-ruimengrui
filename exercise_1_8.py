@@ -5,14 +5,14 @@ from psychopy import visual,event,core
 win = visual.Window([400,400],color="black", units="pix")
 square = visual.Rect(win,lineColor="black",fillColor="red",size=[100,100], pos=[0,0])
 
-rotating = True
+increment = 6
 
-while rotating:
-	square.ori += 6
+while True:
+	square.ori += increment
 	square.draw()
 	win.flip()
 	if event.getKeys('s'):
-		rotating = False
+		increment = 0
 	if event.getKeys('q'):
 		break
 
